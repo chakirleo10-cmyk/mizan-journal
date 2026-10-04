@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f131d" />
+    <title>Mizan Journal</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="dot"></span>
+          <h1>Mizan Journal</h1>
+        </div>
+        <button id="quizBtn" class="primary-btn">Quiz du jour</button>
+      </header>
+
+      <main class="container">
+        <section class="card hero">
+          <p class="eyebrow">Sanctuaire actif</p>
+          <h2>Mon entrée</h2>
+          <input id="title" type="text" placeholder="Titre de la méditation du jour..." />
+          <textarea id="entry" rows="8" placeholder="Écris ici librement…"></textarea>
+        </section>
+
+        <section class="card stats-grid">
+          <div class="slider-box">
+            <label>Humeur</label>
+            <input id="mood" type="range" min="1" max="10" value="7" />
+            <span id="moodValue">7/10</span>
+          </div>
+          <div class="slider-box">
+            <label>Énergie</label>
+            <input id="energy" type="range" min="1" max="10" value="7" />
+            <span id="energyValue">7/10</span>
+          </div>
+          <div class="slider-box">
+            <label>Sommeil</label>
+            <input id="sleep" type="range" min="4" max="12" step="0.5" value="7.5" />
+            <span id="sleepValue">7.5h</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Les 5 prières</h3>
+          <div class="prayers-grid">
+            <label class="check-item"><input type="checkbox" data-prayer="fajr" /> Fajr</label>
+            <label class="check-item"><input type="checkbox" data-prayer="dhuhr" /> Dhuhr</label>
+            <label class="check-item"><input type="checkbox" data-prayer="asr" /> Asr</label>
+            <label class="check-item"><input type="checkbox" data-prayer="maghrib" /> Maghrib</label>
+            <label class="check-item"><input type="checkbox" data-prayer="isha" /> Isha</label>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Qur'an & Tadabbur</h3>
+          <label class="check-item"><input type="checkbox" id="quranRead" /> J'ai lu du Qur'an aujourd'hui</label>
+          <textarea id="quranReflection" rows="4" placeholder="Qu'est-ce que ce verset / cette lecture m'a fait comprendre ?"></textarea>
+        </section>
+
+        <section class="card">
+          <h3>Petites œuvres</h3>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" id="dhikr" /> 🤲 Dhikr aujourd'hui</label>
+            <label class="check-item"><input type="checkbox" id="goodDeed" /> ❤️ Une bonne action</label>
+            <label class="check-item"><input type="checkbox" id="fasting" /> 🌙 J'ai jeûné aujourd'hui</label>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Mon intention pour demain</h3>
+          <textarea id="intention" rows="3" placeholder="Une seule chose que je veux améliorer demain…"></textarea>
+        </section>
+
+        <section class="card">
+          <h3>Tawbah & retour</h3>
+          <textarea id="tawbah" rows="4" placeholder="Ce que je regrette, ce que je demande à Allah et ce que je veux changer…"></textarea>
+        </section>
+
+        <section class="card">
+          <h3>Suivi quotidien</h3>
+          <div class="metrics">
+            <div><span id="streakValue">0</span><small>jours</small></div>
+            <div><span id="pointsValue">0</span><small>points</small></div>
+            <div><span id="badgeValue">Novice</span><small>badge</small></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="quizModal" class="modal hidden">
+      <div class="modal-card">
+        <h3 id="quizQuestion">Question</h3>
+        <div id="quizAnswers" class="quiz-answers"></div>
+        <p id="quizFeedback" class="feedback"></p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
